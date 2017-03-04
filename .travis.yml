@@ -12,6 +12,18 @@ env:
     - secure: "GScWg+oKLPDVwrqz0Mw7TvIZFtxgX/boAVSI3T5SpQPXsgLJVxHC6PsAViJJx71rwlGX2ovbvunSnINTORxg4d2yyeyogSFZtdbyKPSmMaoaagfSz1IpDvty7HjEXkElG8wtPLP4tgese3KJDY5CpzFGorA+PaAueZFWSlYIm3m2MkjqIhLZz6KrCB3G14VwVG03velKHEdWf3KM3KrwmR8mAnhxVklAO81aVld6j+NeZyG7lzqOUtA3kGtKcGdnCuQtLIGGqMdtqu52f70l5+U+9DQeL9bF38QmUPbxf1/lOW3SeBAiFPogzd/Dba3LzmASUoU163Tu05a1fB6WQ0meMxB9TpQcHoSHUWipgjJK598vlBQ1Aauu4du64o87VVIEuT3aQIeSj/Jt/ioWWzAXtZM+H0mXtd+AAp93ADcQX6TkmGH5d3Sft20U6IXhVYoEWbhlEZ7Wxqf7mzDkRNyDP7hNQ4w29xFMdagMod64bEQanI4Y9v7WvWDQy8DpFuhMUqhojXGNODDlI7RnB0gSGpolfYaSLo1eDMTESTclQnu05zNp+4jZqYvBaA+8WcIWstUz4CuD6X2BubdUNnYKO+SRQUN0KjMQsEPyv7to7SlS4IXaeQiqI7iPqNzrP+HbYfOfOnmFEQlfN7qkXlFJLVe8KFjPNEMHQ9StOmU=" # DOCKER_USER
     - secure: "DAW93RQJ5DbbQ01e+hc4LBSkOMUUrJtweiUuAZGRZgnpAufP1DZ5obNM7R2T6n71O0JBdDKYjEegsL7I0+XSe/DWBY9e59Ly/d2G8cLLe8RoJoYx5iZ4idg+ySzylTfdCKsxMv4a5gj9ZVLK+hT6fXR5aEs4nDo+3SdNAagyg6dP0R2F+b12Vp7Lrr7/AeLyoak/OjVX49PNf/m4MELokaxLN/biPkqPqfCF4eVahGNx8mvipAvU91j2d6htYCSq9rnNNe4nA5zguM84xAR8uKwJdWl8cp/Xvdwz0pjfdZlSFphztXxwBqkyYYBXqkqYMj5ht6ntKd5KTYJE+b0NmCLnkD76G79Q7p8RPhn8Xg+tZBlEZmWlJhxfLO7Qm51UacmdFWnj6ayb8Qp/uRsm9iH6ZpegxFZdvwSGXL3ly5mKElgcq7CrBhXcucjnF/Srt0B1vDXUkhjgRvqlt2mRR6+t+ZliAvN5ESPDQKoixQsEPdy+i6XFsYbXjvv+hGunM3n7T85/A/Q7/ziFaSxvlrQ7gTbDbvpTuEs6nQDTJ5lQo8oofaBjQIKzlT8KzF17vTOTCLg+jdwUojBm2AzmBZPvS9bR7EfETfYJj7YIVTn4mOZHDKI4TYX+AmVjqzTJ8B1FdFZX9oO6eNAKoPSN0kI1ZyTjdn8HgEE9v3E+nWE=" # DOCKER_PASS
     - COMMIT=${TRAVIS_COMMIT::7}
+    - CLOUDSDK_CORE_DISABLE_PROMPTS=1
+
+before_install:
+  - gcloud version
+  - gcloud components update kubectl || true
+  - curl https://sdk.cloud.google.com | bash
+  - bash -l ./gcloud.sh version
+  - bash -l ./gcloud.sh components update kubectl
+
+install: true
+
+script: true
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
