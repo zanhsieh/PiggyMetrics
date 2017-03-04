@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: account_service
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        service: account_service
+    spec:
+      containers:
+      - env:
+        - name: ACCOUNT_SERVICE_PASSWORD
+        - name: CONFIG_SERVICE_PASSWORD
+        - name: MONGODB_PASSWORD
+        image: zanhsieh/piggymetrics-account-service
+        name: account_service
+        resources: {}
+      restartPolicy: Always

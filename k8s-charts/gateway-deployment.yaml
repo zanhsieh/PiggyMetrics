@@ -1,0 +1,24 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: gateway
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        service: gateway
+    spec:
+      containers:
+      - env:
+        - name: CONFIG_SERVICE_PASSWORD
+        image: zanhsieh/piggymetrics-gateway
+        name: gateway
+        ports:
+        - containerPort: 4000
+        resources: {}
+      restartPolicy: Always
+status: {}

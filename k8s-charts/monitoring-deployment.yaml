@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: monitoring
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        service: monitoring
+    spec:
+      containers:
+      - env:
+        - name: CONFIG_SERVICE_PASSWORD
+        image: zanhsieh/piggymetrics-monitoring
+        name: monitoring
+        ports:
+        - containerPort: 8080
+        - containerPort: 8989
+        resources: {}
+      restartPolicy: Always
+status: {}

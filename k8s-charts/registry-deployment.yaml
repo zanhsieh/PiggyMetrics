@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: registry
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        service: registry
+    spec:
+      containers:
+      - env:
+        - name: CONFIG_SERVICE_PASSWORD
+        image: zanhsieh/piggymetrics-registry
+        name: registry
+        ports:
+        - containerPort: 8761
+        resources: {}
+      restartPolicy: Always
