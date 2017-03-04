@@ -8,9 +8,9 @@ jdk: oraclejdk8
 
 env:
   global:
-    - secure: "GeONVsTD48Y88CKoqupo/FC1Gy0eCrT1UNylvMzz5VYcLhWcUcu/d4870ZJznBqslGHbFaRc6VCXFLnbKNyR5Chgg127ouWOv/NFubJ5cO0UjHlBwoAxQ/SIrxG9W4B6Y2VeWRO0SIPHF6wUVeELiaPmIIe/jF15/SWJA926G2dF0+zTbn1KNWoVRi9pxZ0bIbEvVcVfHjWHsPtho916KRZ7ToV27f5E9DPLVMraK2HROOplJlXKNLuUor9xSmtOB/787yNrZmdsUaQDMHVfru9yEubfg4tF5ydoluB+JPzeUqIK2PrDgAiwmkEdoJFfbAOqwdy8vZkgpYd/t5vkhbOn3yA0QO1pnyhidx1YgyoJN3HwfMeVNQwUVg8jw7bltVe/DxsNo/AW11Tu7jKteuxewRHCxORzaUSmy5rnLq3AKIXT6h8Kq5VxP5tGbQypa7/z+Zu4vfOBdKGMiLllQ0vhhU0osgYzk/jT4KknuWQtOkX+QTS9iViIUwQgcn3kIMlz4eO83Mbt+IkNvgjF0DyE64mfV2ThTjXDV6959g3Nl/Fl95VMSTg95xtl0tbf733Lj+9HCIfLetlBz4ZzOqaDgD5fRL5HA8jR3FFHVdMd+dx/JELjSRHxO6ZFrCVG/2hBldIakO31/FbpODnDIkKO+86Oqz9DPKVnLJlmZp4=" # DOCKER_EMAIL
-    - secure: "Gl6a03cI88dKHV4rjP1IkYqCdVe7IM0XNcEzFDCxmvXHWSpqlotntOYtgvtRKsYOzb0cfdQwgFuwj80glUbFX5vbX1y5r+qR5sQSrJVi61e8Pijn0MT7rE/d2gCJwaRTkR2lvtRRTIX41LA+aZ6F7+xFSd+ni82IlaXtDywQJWpCEmxcSqSUd5nVhHzH5JZmkYQmQ8fjxzGUhpeePfapYThPxXsHGxmJeoIlEDM1TEFtxVf3Zo9D10812uesa7EwNSKL6MOBU/Me7+liIHdRRpRwVmOjaFAZLeHsUfZQWcLWer0ODULov1U/YMdF860gV1X8PPYxAYNnWqevOGZIsYTX60yem/dCq90Lx7cIiK/TBZIS7x9k65QwP/shnO/RK8PPANBt8bJ4FBxmDPRMPRvgCPp4wQIYTyaiXd0M6BmK+LysS5cRgOOg7YF+ZRqKjNGY9rkNeGs0x8LIaE4Vz138tJCVJ0U+r2OOZFLCIu4dmvuOo1rWf4Hzh+Xt/nx8RrAwwqHKWRyayHkZEbQv2dNGcJsZyAzXsxA6NTDGQfKYloX5oY4qq3BMCkRoid9sLHoJvZrfkN6mjbZkEd2Ed3RzyTIxasmRUeD45vfr7go9ts1a6ppDrRYJWLi26pqyPhimTI0ljEYXp4QnK5JMya2y6H0wo/hJmzrqfXj4+C0=" # DOCKER_USER
-    - secure: "Kt8hRbEIkYW3CYJgvqEK9zCyS/l54XOI90799xEuXWgFQtZCH9Rjp6pthk+CxNg+zWndAcxaOm48uccDIEHgyVg/iL5LiwhuZtUNN2NBssSmvhaZM2dXt4fthVF/lp9JcGqeY9g4VvtDV6ODUvtzTXc1oSp0+vxYb94DNJjXvSOJj74Ia3qk67LxrvC+t4pwKb3NZ7vb07Ttjd97Cou2cNoCtj7GyHcsWvfhe2Txxx8XAo/wvSL96YJOd3cooio+n7hzm7PPgid+8G1EeBdOVca/4DI3Q4Z9a2dPFlvBMYSLfd03CVJ/AORiH0xiqMBI/X2K9Go3fLgXDeQhJDdbCXp7dR+ijtV0nEIh8MHeZdBJXMvjtDmKZkIovW6yxRG8qguYpbiFjSvPd8t0gZaEXSaM3uh/Vqn5kmZ21uhUArKZs4mc3ENnXEmo4IMd6C/eQNCXJoMolx9PPdfWZtQfBCWIlYA6GrWPeYWZganfU/1/zVb60gBmuXBl1sFRHAfY2uTGGocYGBcS7P13vPuXC9zSekSvMKI9PKQh+HEakXSlTPYsXqEtGBh/2xv99egk7fynChWiXJ5gML/5WsYA+cFp+mkd24fXEIK2H/3jqFc+UTKw+74q0t0KeBHmSf1bgoXiomhhXqGxx5w5eAHi6a6aWPSQIruhTKGaXuBvztU=" # DOCKER_PASS
+     - secure: "kyCbnO/ET+LsjQx4RHB+srz1iwQBJglxvBpK8Mk9yOyaL+/7tsJiwe2iO/1H/nr0YK2uvTcbDSFC5alhvEeZXpzf8uN/vRAQTWZN8GXbyxun6j7jBIOp3T6OHLnzTii4cLxmXnRFt2QlkFsz1KPHaGeJMifF0bKsqxfXqLZ1rRJ6x+nq1y5KtweW0JP8T6IHt7uzIwyxe3VKEfpxucG371kyD8JOLzp+RhUBI8GBtXhtvJIZJB52k3u9m1rwm1HnykQz6sugkXuN5udLbwC+R856y/BaWSon9SKZ33/1SNRpzk48S6d1LvgNyWk0GKRWl5x0RPghj1Jp4mcCsXgKly2g6jLQqUXOb60j/qy9ZocriRqW0DaFnunmQGlSmMmfplWLFWvyclgeylyGk5z7EYfiFuYBnDg/VapqObc/aCMNaJLr6BJnma9iRBc4iDYpgRVVFncLB7ICy1ltBw+5o2IILoNPwWFSj+UQGpqwJF72kp61BmPOd6elK2zAMvWwK9IkmGM+Aq/wMRc2dNzsKaBxKf/v1WEIuhr6qqsd4yopfR57BThhJT8ojq3j8V5J9CsSyNmkuuRYqlQwpi1N/BYdDTikK59rkA1KC46hlGl5TZDlB/riInfCmNnwzQvhSXtEdmOiX68CSbZEJUYp3px2VgaJbPrcNFso8/I02G4=" # DOCKER_EMAIL
+    - secure: "GScWg+oKLPDVwrqz0Mw7TvIZFtxgX/boAVSI3T5SpQPXsgLJVxHC6PsAViJJx71rwlGX2ovbvunSnINTORxg4d2yyeyogSFZtdbyKPSmMaoaagfSz1IpDvty7HjEXkElG8wtPLP4tgese3KJDY5CpzFGorA+PaAueZFWSlYIm3m2MkjqIhLZz6KrCB3G14VwVG03velKHEdWf3KM3KrwmR8mAnhxVklAO81aVld6j+NeZyG7lzqOUtA3kGtKcGdnCuQtLIGGqMdtqu52f70l5+U+9DQeL9bF38QmUPbxf1/lOW3SeBAiFPogzd/Dba3LzmASUoU163Tu05a1fB6WQ0meMxB9TpQcHoSHUWipgjJK598vlBQ1Aauu4du64o87VVIEuT3aQIeSj/Jt/ioWWzAXtZM+H0mXtd+AAp93ADcQX6TkmGH5d3Sft20U6IXhVYoEWbhlEZ7Wxqf7mzDkRNyDP7hNQ4w29xFMdagMod64bEQanI4Y9v7WvWDQy8DpFuhMUqhojXGNODDlI7RnB0gSGpolfYaSLo1eDMTESTclQnu05zNp+4jZqYvBaA+8WcIWstUz4CuD6X2BubdUNnYKO+SRQUN0KjMQsEPyv7to7SlS4IXaeQiqI7iPqNzrP+HbYfOfOnmFEQlfN7qkXlFJLVe8KFjPNEMHQ9StOmU=" # DOCKER_USER
+    - secure: "DAW93RQJ5DbbQ01e+hc4LBSkOMUUrJtweiUuAZGRZgnpAufP1DZ5obNM7R2T6n71O0JBdDKYjEegsL7I0+XSe/DWBY9e59Ly/d2G8cLLe8RoJoYx5iZ4idg+ySzylTfdCKsxMv4a5gj9ZVLK+hT6fXR5aEs4nDo+3SdNAagyg6dP0R2F+b12Vp7Lrr7/AeLyoak/OjVX49PNf/m4MELokaxLN/biPkqPqfCF4eVahGNx8mvipAvU91j2d6htYCSq9rnNNe4nA5zguM84xAR8uKwJdWl8cp/Xvdwz0pjfdZlSFphztXxwBqkyYYBXqkqYMj5ht6ntKd5KTYJE+b0NmCLnkD76G79Q7p8RPhn8Xg+tZBlEZmWlJhxfLO7Qm51UacmdFWnj6ayb8Qp/uRsm9iH6ZpegxFZdvwSGXL3ly5mKElgcq7CrBhXcucjnF/Srt0B1vDXUkhjgRvqlt2mRR6+t+ZliAvN5ESPDQKoixQsEPdy+i6XFsYbXjvv+hGunM3n7T85/A/Q7/ziFaSxvlrQ7gTbDbvpTuEs6nQDTJ5lQo8oofaBjQIKzlT8KzF17vTOTCLg+jdwUojBm2AzmBZPvS9bR7EfETfYJj7YIVTn4mOZHDKI4TYX+AmVjqzTJ8B1FdFZX9oO6eNAKoPSN0kI1ZyTjdn8HgEE9v3E+nWE=" # DOCKER_PASS
     - COMMIT=${TRAVIS_COMMIT::7}
 
 after_success:
@@ -21,55 +21,55 @@ after_success:
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
   # CONFIG SERVICE
-  - export CONFIG=sqshq/piggymetrics-config
+  - export CONFIG=zanhsieh/piggymetrics-config
   - docker build -t $CONFIG:$COMMIT ./config
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
   - docker push $CONFIG
 
   # REGISTRY
-  - export REGISTRY=sqshq/piggymetrics-registry
+  - export REGISTRY=zanhsieh/piggymetrics-registry
   - docker build -t $REGISTRY:$COMMIT ./registry
   - docker tag $REGISTRY:$COMMIT $REGISTRY:$TAG
   - docker push $REGISTRY
 
   # GATEWAY
-  - export GATEWAY=sqshq/piggymetrics-gateway
+  - export GATEWAY=zanhsieh/piggymetrics-gateway
   - docker build -t $GATEWAY:$COMMIT ./gateway
   - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
   - docker push $GATEWAY
 
   # AUTH SERVICE
-  - export AUTH_SERVICE=sqshq/piggymetrics-auth-service
+  - export AUTH_SERVICE=zanhsieh/piggymetrics-auth-service
   - docker build -t $AUTH_SERVICE:$COMMIT ./auth-service
   - docker tag $AUTH_SERVICE:$COMMIT $AUTH_SERVICE:$TAG
   - docker push $AUTH_SERVICE
 
   # ACCOUNT SERVICE
-  - export ACCOUNT_SERVICE=sqshq/piggymetrics-account-service
+  - export ACCOUNT_SERVICE=zanhsieh/piggymetrics-account-service
   - docker build -t $ACCOUNT_SERVICE:$COMMIT ./account-service
   - docker tag $ACCOUNT_SERVICE:$COMMIT $ACCOUNT_SERVICE:$TAG
   - docker push $ACCOUNT_SERVICE
 
   # STATISTICS SERVICE
-  - export STATISTICS_SERVICE=sqshq/piggymetrics-statistics-service
+  - export STATISTICS_SERVICE=zanhsieh/piggymetrics-statistics-service
   - docker build -t $STATISTICS_SERVICE:$COMMIT ./statistics-service
   - docker tag $STATISTICS_SERVICE:$COMMIT $STATISTICS_SERVICE:$TAG
   - docker push $STATISTICS_SERVICE
 
   # NOTIFICATION_SERVICE
-  - export NOTIFICATION_SERVICE=sqshq/piggymetrics-notification-service
+  - export NOTIFICATION_SERVICE=zanhsieh/piggymetrics-notification-service
   - docker build -t $NOTIFICATION_SERVICE:$COMMIT ./notification-service
   - docker tag $NOTIFICATION_SERVICE:$COMMIT $NOTIFICATION_SERVICE:$TAG
   - docker push $NOTIFICATION_SERVICE
 
   # MONITORING
-  - export MONITORING=sqshq/piggymetrics-monitoring
+  - export MONITORING=zanhsieh/piggymetrics-monitoring
   - docker build -t $MONITORING:$COMMIT ./monitoring
   - docker tag $MONITORING:$COMMIT $MONITORING:$TAG
   - docker push $MONITORING
 
   # MONGO DB
-  - export MONGO_DB=sqshq/piggymetrics-mongodb
+  - export MONGO_DB=zanhsieh/piggymetrics-mongodb
   - docker build -t $MONGO_DB:$COMMIT ./mongodb
   - docker tag $MONGO_DB:$COMMIT $MONGO_DB:$TAG
   - docker push $MONGO_DB
