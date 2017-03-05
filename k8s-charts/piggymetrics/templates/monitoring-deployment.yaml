@@ -36,7 +36,6 @@ spec:
 {{- end }}
         name: monitoring
         ports:
-          - containerPort: 6000
           - containerPort: 8080
           - containerPort: 8989
         resources: {}
