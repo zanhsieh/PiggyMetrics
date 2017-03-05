@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ template "fullname" . }}
+    type: db
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+  name: auth_mongodb
+  namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+        type: db
+        service: auth_mongodb
+    spec:
+      containers:
+      - env:
+        - name: MONGODB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "fullname" . }}
+              key: mongodb-password
+{{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
+        image: zanhsieh/{{ template "fullname" . }}-mongodb:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+{{- else }}
+        image: zanhsieh/{{ template "fullname" . }}-mongodb:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+{{- end }}
+        name: auth_mongodb
+        ports:
+          - name: "27017"
+            containerPort: 27017
+        resources: {}
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: dockercfg-key
+      restartPolicy: Always

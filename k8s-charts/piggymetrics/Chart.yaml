@@ -1,0 +1,11 @@
+name: piggymetrics
+apiVersion: v1
+description: A PiggyMetrics Helm chart for Kubernetes
+home: http://my-piggymetrics.rhcloud.com/
+sources:
+  - https://github.com/sqshq/PiggyMetrics
+version: 0.1.0
+maintainers:
+  - name: Ming Hsieh
+    email: zanhsieh@gmail.com
+engine: gotpl

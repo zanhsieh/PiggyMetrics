@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: rabbitmq
+    app: {{ template "fullname" . }}
+    type: service
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+  name: rabbitmq
+  namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
+spec:
+  selector:
+    service: rabbitmq
+  type: ClusterIP
+  ports:
+  - name: "5672"
+    protocol: TCP
+    port: 5672
+    targetPort: 5672

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    service: auth_mongodb
+    app: {{ template "fullname" . }}
+    type: db
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+  name: auth_mongodb
+  namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
+spec:
+  selector:
+    service: auth_mongodb
+  type: clusterIP
+  ports:
+  - name: "27017"
+    port: 27017
+    targetPort: 25000

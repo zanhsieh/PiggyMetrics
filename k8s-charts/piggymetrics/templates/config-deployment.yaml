@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: {{ template "fullname" . }}
+    type: service
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+    release: "{{ .Release.Name }}"
+  name: config
+  namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
+spec:
+  replicas: {{ if eq .Values.environment "prod" -}} 2 {{- else -}} 1 {{- end }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ template "fullname" . }}
+        type: service
+        service: config
+    spec:
+      containers:
+      - env:
+        - name: CONFIG_SERVICE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "fullname" . }}
+              key: config-service-password
+{{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
+        image: zanhsieh/{{ template "fullname" . }}-config:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+{{- else }}
+        image: zanhsieh/{{ template "fullname" . }}-config:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+{{- end }}
+        name: config
+        ports:
+          - name: "8888"
+            containerPort: 8888
+        resources: {}
+        imagePullPolicy: Always
+      imagePullSecrets:
+        - name: dockercfg-key
+      restartPolicy: Always
