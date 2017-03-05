@@ -6,7 +6,7 @@ metadata:
     type: service
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
-  name: statistics_service
+  name: statistics-service
   namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
 spec:
   replicas: {{ if eq .Values.environment "prod" -}} 2 {{- else -}} 1 {{- end }}
@@ -20,7 +20,7 @@ spec:
       labels:
         app: {{ template "fullname" . }}
         type: service
-        service: statistics_service
+        service: statistics-service
     spec:
       containers:
       - env:
@@ -40,14 +40,13 @@ spec:
               name: {{ template "fullname" . }}
               key: statistics-service-password
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
-        image: zanhsieh/{{ template "fullname" . }}-account-service:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-account-service:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
-        image: zanhsieh/{{ template "fullname" . }}-account-service:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-account-service:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- end }}
-        name: statistics_service
+        name: statistics-service
         ports:
-          - name: "7000"
-            containerPort: 7000
+          - containerPort: 7000
         resources: {}
         imagePullPolicy: Always
       imagePullSecrets:

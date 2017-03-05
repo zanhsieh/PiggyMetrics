@@ -6,7 +6,7 @@ metadata:
     type: db
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
-  name: auth_mongodb
+  name: auth-mongodb
   namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
 spec:
   replicas: 1
@@ -20,7 +20,7 @@ spec:
       labels:
         app: {{ template "fullname" . }}
         type: db
-        service: auth_mongodb
+        service: auth-mongodb
     spec:
       containers:
       - env:
@@ -30,14 +30,13 @@ spec:
               name: {{ template "fullname" . }}
               key: mongodb-password
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
-        image: zanhsieh/{{ template "fullname" . }}-mongodb:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-mongodb:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
-        image: zanhsieh/{{ template "fullname" . }}-mongodb:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-mongodb:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- end }}
-        name: auth_mongodb
+        name: auth-mongodb
         ports:
-          - name: "27017"
-            containerPort: 27017
+          - containerPort: 27017
         resources: {}
         imagePullPolicy: Always
       imagePullSecrets:

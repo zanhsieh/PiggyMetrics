@@ -30,14 +30,13 @@ spec:
               name: {{ template "fullname" . }}
               key: config-service-password
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
-        image: zanhsieh/{{ template "fullname" . }}-registry:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-registry:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
-        image: zanhsieh/{{ template "fullname" . }}-registry:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-registry:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- end }}
         name: registry
         ports:
-          - name: "8761"
-            containerPort: 8761
+          - containerPort: 8761
         resources: {}
         imagePullPolicy: Always
       imagePullSecrets:

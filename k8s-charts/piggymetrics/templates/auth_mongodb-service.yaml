@@ -2,17 +2,17 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: auth_mongodb
+    service: auth-mongodb
     app: {{ template "fullname" . }}
     type: db
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
-  name: auth_mongodb
+  name: auth-mongodb
   namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
 spec:
   selector:
-    service: auth_mongodb
-  type: clusterIP
+    service: auth-mongodb
+  type: ClusterIP
   ports:
   - name: "27017"
     port: 27017

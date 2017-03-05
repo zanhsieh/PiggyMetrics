@@ -2,16 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: statistics_mongodb
+    service: statistics-mongodb
     app: {{ template "fullname" . }}
     type: db
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
-  name: statistics_mongodb
+  name: statistics-mongodb
   namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
 spec:
   selector:
-    service: statistics_mongodb
+    service: statistics-mongodb
   type: ClusterIP
   ports:
   - name: "27000"

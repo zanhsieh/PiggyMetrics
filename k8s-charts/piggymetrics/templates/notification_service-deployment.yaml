@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: notification_service
+  name: notification-service
   labels:
     app: {{ template "fullname" . }}
     type: service
@@ -20,7 +20,7 @@ spec:
       labels:
         app: {{ template "fullname" . }}
         type: service
-        service: notification_service
+        service: notification-service
     spec:
       containers:
       - env:
@@ -40,14 +40,13 @@ spec:
               name: {{ template "fullname" . }}
               key: mongodb-password
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
-        image: zanhsieh/{{ template "fullname" . }}-notification-service:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-notification-service:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
-        image: zanhsieh/{{ template "fullname" . }}-notification-service:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-notification-service:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- end }}
-        name: notification_service
+        name: notification-service
         ports:
-          - name: "8000"
-            containerPort: 8000
+          - containerPort: 8000
         resources: {}
         imagePullPolicy: Always
       imagePullSecrets:

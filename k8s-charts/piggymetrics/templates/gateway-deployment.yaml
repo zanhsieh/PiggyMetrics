@@ -30,14 +30,13 @@ spec:
               name: {{ template "fullname" . }}
               key: config-service-password
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
-        image: zanhsieh/{{ template "fullname" . }}-gateway:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-gateway:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
-        image: zanhsieh/{{ template "fullname" . }}-gateway:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-gateway:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- end }}
         name: gateway
         ports:
-          - name: "4000"
-            containerPort: 4000
+          - containerPort: 4000
         resources: {}
         imagePullPolicy: Always
       imagePullSecrets:

@@ -2,16 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: account_service
+    service: account-service
     app: {{ template "fullname" . }}
     type: service
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
-  name: account_service
+  name: account-service
   namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
 spec:
   selector:
-    service: account_service
+    service: account-service
   type: ClusterIP
   ports:
   - name: "6000"

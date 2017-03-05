@@ -26,18 +26,15 @@ spec:
       - env:
         - name: CONFIG_SERVICE_PASSWORD
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
-        image: zanhsieh/{{ template "fullname" . }}-monitoring:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-monitoring:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
-        image: zanhsieh/{{ template "fullname" . }}-monitoring:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
+        image: zanhsieh/{{ .Chart.Name }}-monitoring:{{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- end }}
         name: monitoring
         ports:
-          - name: "6000"
-            containerPort: 6000
-          - name: "8080"
-            containerPort: 8080
-          - name: "8989"
-            containerPort: 8989
+          - containerPort: 6000
+          - containerPort: 8080
+          - containerPort: 8989
         resources: {}
         imagePullPolicy: Always
       imagePullSecrets:

@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
+  labels:
+    name: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}

@@ -2,16 +2,16 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    service: notification_service
+    service: notification-service
     app: {{ template "fullname" . }}
     type: service
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
-  name: notification_service
+  name: notification-service
   namespace: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
 spec:
   selector:
-    service: notification_service
+    service: notification-service
   type: ClusterIP
   ports:
   - name: "8000"
