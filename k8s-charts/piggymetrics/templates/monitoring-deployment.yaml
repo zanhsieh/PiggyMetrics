@@ -25,6 +25,10 @@ spec:
       containers:
       - env:
         - name: CONFIG_SERVICE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: {{ template "fullname" . }}
+              key: config-service-password
 {{- if or (eq .Values.environment "uat") (eq .Values.environment "prod") }}
         image: zanhsieh/{{ .Chart.Name }}-monitoring:release - {{- .Values.environment -}} - {{- $.Values.region -}} -latest
 {{- else }}
