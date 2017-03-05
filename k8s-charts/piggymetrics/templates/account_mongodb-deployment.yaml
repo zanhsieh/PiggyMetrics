@@ -26,6 +26,8 @@ spec:
       - env:
         - name: INIT_DUMP
           value: account-service-dump.js
+        - name: NAMESPACE
+          value: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
         - name: MONGODB_PASSWORD
           valueFrom:
             secretKeyRef:

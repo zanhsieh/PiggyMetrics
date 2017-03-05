@@ -24,6 +24,8 @@ spec:
     spec:
       containers:
       - env:
+        - name: NAMESPACE
+          value: {{ template "fullname" . }}- {{- .Values.environment -}} - {{- .Values.region }}
         - name: STATISTICS_SERVICE_PASSWORD
           valueFrom:
             secretKeyRef:
